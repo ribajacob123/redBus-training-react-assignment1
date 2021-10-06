@@ -1,0 +1,25 @@
+.suggestionHeader {
+  background: #5a5a5a;
+  padding: 0 1em 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: white;
+  height: 3.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #222222;
+  text-decoration: none;
+  cursor: pointer;
+}

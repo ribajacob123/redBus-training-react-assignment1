@@ -1,0 +1,43 @@
+.searchListHeading {
+    background: #eeeeee;
+    margin: .7rem;
+    margin-bottom: 0px;
+    padding: .8em;
+    color: #999999;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    clear: both;
+    background: #fff;
+    margin: 0 1rem;
+    padding: 0;
+    flex-direction: column;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+li {
+    padding: 0.71rem;
+    font-size: 0.8rem;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    line-height: 1.3em;
+}
+
+li:hover {
+    background: #f7f6f6d0;
+}
+
+.cityIcon {
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.5rem;
+}

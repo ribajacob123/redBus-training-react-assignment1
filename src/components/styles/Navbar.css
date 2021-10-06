@@ -1,0 +1,26 @@
+#navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(to right, #ae3c3c, #c95959);
+    height: 4rem;
+    width: 100%;
+    position: sticky;
+    z-index: 1;
+    color: whitesmoke;
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+#navbarHeading {
+    margin-left: 1rem;
+    font-size: 1.05rem;
+    display: inline-block;
+    font-weight: 800;
+}
+
+#logoImg {
+    float: right;
+    margin-right: 1rem;
+}

@@ -1,0 +1,110 @@
+.searchBox {
+    height: 15rem;
+    width: 93%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+#searchButton {
+    align-self: center;
+    align-items: center;
+    width: 19rem;
+    height: 2.5rem;
+    color: ivory;
+    border-radius: 3px;
+    border: solid 1px #c95959;
+    background-color: #c95959;
+    font-weight: 900;
+    font-size: 0.85rem;
+}
+
+.dateDiv {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px rgb(221, 219, 219);
+    margin: 0 1rem;
+}
+
+.destination,
+.source {
+    border-bottom: solid 1px rgb(221, 219, 219);
+    margin: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.dateSelectDiv {
+    flex: 37%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.todayTomrw {
+    color: rgb(0, 60, 255);
+    flex: 45%;
+    float: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todayTomrwText {
+    font-size: 0.6rem;
+    font-weight: 900;
+}
+
+.inputTab {
+    color: grey;
+    outline: none;
+    width: 92%;
+    height: 2rem;
+    border: 0px;
+}
+
+.selectDateText {
+    color: grey;
+    outline: none;
+    height: 2rem;
+    border: 0px;
+}
+
+.sourceDestinationImages {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 1rem;
+}
+
+.calendarImage {
+    width: 1.6rem;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.source {
+    position: relative;
+}
+
+.changeButton {
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    outline: none;
+    border: 0px;
+    background-color: white;
+    padding: 0%;
+}
+
+.swapIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+input {
+    font-size: 0.75rem;
+}

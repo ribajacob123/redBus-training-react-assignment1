@@ -1,0 +1,10 @@
+.bottom {
+    width: 100%;
+    float: bottom;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    border-top: solid 2px rgba(211, 211, 211, 0.712);
+}

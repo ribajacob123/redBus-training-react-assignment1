@@ -1,0 +1,29 @@
+.input {
+    padding: .5em 1em;
+    position: relative;
+    margin-top: 1em;
+}
+
+#suggestInput {
+    padding: .7rem .5rem .7rem 1.8rem;
+    border: 1px solid orange !important;
+    border-radius: 5px;
+    margin-top: 0;
+    color: #000;
+    outline: none;
+    width: 90%;
+    font-size: .8rem;
+    margin: 6px 0 0;
+    color: rgb(126, 125, 125);
+}
+
+.search-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    font-size: .9rem;
+    position: absolute;
+    top: 2rem;
+    transform: translateY(-50%);
+    margin-left: .6em;
+    color: #ccc;
+}

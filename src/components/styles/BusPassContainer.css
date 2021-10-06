@@ -1,0 +1,16 @@
+.busPassContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    flex: 40%;
+}
+
+.introducing {
+    font-size: 0.86rem;
+    font-weight: 500;
+    color: rgb(91, 93, 95);
+    align-self: left;
+    margin: 1rem 0 1rem 1rem;
+}
