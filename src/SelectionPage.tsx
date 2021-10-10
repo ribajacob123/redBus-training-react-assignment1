@@ -7,6 +7,10 @@ import "./SelectionPage.css";
 function SelectionPage(props: any) {
   //const [searchTerm,setSearchTerm] = useState("")
   //const [searchResults,setSearchResults] = useState([])
+  const searchHeading =[
+    {heading:"RECENT SEARCHES"},
+    {heading:"POPULAR SEARCHES"},
+  ]
   const city: any = [
     "Bengaluru",
     "Chennai",
@@ -16,16 +20,28 @@ function SelectionPage(props: any) {
     "Delhi",
     "Mumbai",
   ];
+
+  let listInfo = []
+  for (let i =0;i<searchHeading.length;i++) {
+    listInfo.push(<SearchList 
+      heading={searchHeading[i].heading}         
+      passedFunction={props.passedFunction}
+      changeInput={props.changeInput}
+      source={props.source}
+      dest={props.dest}
+      setSource={props.setSource}
+      setDest={props.setDest}
+      flag={props.flag}
+      setFlag={props.setFlag}
+      city={props.searchTerm.length < 1 ? city : props.searchResults} />)
+  }
+
   const searchHandler = (searchTerm: any) => {
     props.setSearchTerm(searchTerm);
-    if (searchTerm !== "") {
-      const newList: any = city.filter((cit: any) => {
-        return cit.toLowerCase().includes(searchTerm.toLowerCase());
-      });
-      props.setSearchResults(newList);
-    } else {
-      props.setSearchResults(city);
-    }
+    const newList: any = city.filter((cit: any) => {
+      return cit.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+    props.setSearchResults(newList);
   };
   return (
     <div
@@ -35,30 +51,7 @@ function SelectionPage(props: any) {
     >
       <SuggestionHeader passedFunction={props.passedFunction} />
       <Input searchTerm={props.searchTerm} searchKeyword={searchHandler} />
-      <SearchList
-        heading="RECENT SEARCHES"
-        passedFunction={props.passedFunction}
-        changeInput={props.changeInput}
-        source={props.source}
-        dest={props.dest}
-        setSource={props.setSource}
-        setDest={props.setDest}
-        flag={props.flag}
-        setFlag={props.setFlag}
-        city={props.searchTerm.length < 1 ? city : props.searchResults}
-      />
-      <SearchList
-        heading="POPULAR SEARCHES"
-        passedFunction={props.passedFunction}
-        changeInput={props.changeInput}
-        source={props.source}
-        dest={props.dest}
-        setSource={props.setSource}
-        setDest={props.setDest}
-        flag={props.flag}
-        setFlag={props.setFlag}
-        city={props.searchTerm.length < 1 ? city : props.searchResults}
-      />
+      {listInfo}
     </div>
   );
 }

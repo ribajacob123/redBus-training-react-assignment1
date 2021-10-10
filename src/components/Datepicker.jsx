@@ -1,20 +1,18 @@
-import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import "./styles/DatePicker.css";
+
 
 import "react-datepicker/dist/react-datepicker.css";
 
 //CSS Modules, react-datepicker-cssmodules.css
 import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
-const DatePick = () => {
-  const [startDate, setStartDate] = useState(null);
+const DatePick = (props) => {
   return (
     <DatePicker
       className="datePicker"
       dateFormat="dd/MM/yyyy"
-      selected={startDate}
-      onChange={(date) => setStartDate(date)}
+      selected={props.startDate}
+      onChange={(date) => props.setStartDate(date)}
       placeholderText="ENTER DATE"
       withPortal
     />

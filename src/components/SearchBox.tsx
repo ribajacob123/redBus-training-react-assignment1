@@ -1,6 +1,5 @@
 import React from "react";
-//import { useState } from "react";
-import "./styles/SearchBox.css";
+import { useState } from "react";
 import getin from "./images/getin.png";
 import goout from "./images/goout.png";
 import calendar from "./images/calendar.png";
@@ -10,29 +9,41 @@ import DatePick from "./Datepicker";
 function SearchBox(props: any) {
   //const [source,setSource]= useState("");
   //const [dest,setDest] = useState("");
+  const [startDate, setStartDate] = useState<any | null>(null);
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate()+1)
 
-  function loadSearchPagesource(e: any) {
+  function loadSearchPage(flag:string) {
     props.passedFunction("block");
-    props.setSource(props.source);
-    props.setFlag("1");
     props.setSearchTerm("");
+    props.setFlag(flag);
   }
-  function loadSearchPagedest(e: any) {
-    props.passedFunction("block");
-    props.setDest(props.dest);
-    props.setFlag("0");
-    props.setSearchTerm("");
-  }
-  function sourcechange(val: any) {
-    props.setSource(val.target.value);
-  }
-  function destchange(val: any) {
-    props.setDest(val.target.value);
-  }
-  function change(event: any) {
+  
+  function change() {
     var temp: any = props.source;
     props.setSource(props.dest);
     props.setDest(temp);
+  }
+
+  function setDate(day:string){
+    if(day==="today"){
+    setStartDate(today)
+    }
+    else{
+      setStartDate(tomorrow)
+    }
+  }
+  function validation(){
+    if(props.source ==="" || props.dest ==="" ||startDate === null){
+      alert("Please fill all the fields")
+      return false;
+    }
+    if(props.source === props.dest){
+      alert("Please enter different source and destination")
+      return false;
+    }
+
   }
   return (
     <div className="searchBox">
@@ -43,9 +54,8 @@ function SearchBox(props: any) {
           type="text"
           id="sourceInput"
           placeholder="ENTER SOURCE"
-          onChange={sourcechange}
           value={props.source}
-          onClick={loadSearchPagesource}
+          onClick={()=>loadSearchPage('1')}
         />
         <button className="changeButton">
           <img onClick={change} className="swapIcon" src={swap} alt="" />
@@ -59,23 +69,22 @@ function SearchBox(props: any) {
           type="text"
           id="destinationInput"
           placeholder="ENTER DESTINATION"
-          onChange={destchange}
           value={props.dest}
-          onClick={loadSearchPagedest}
+          onClick={()=>loadSearchPage('0')}
         />
       </div>
       <div className="dateDiv">
         <div className="dateSelectDiv">
           <img className="calendarImage" src={calendar} alt="" />
 
-          <DatePick />
+          <DatePick startDate={startDate} setStartDate = {setStartDate}/>
         </div>
         <div className="todayTomrw">
-          <span className="todayTomrwText">TODAY | </span>
-          <span className="todayTomrwText">TOMORROW</span>
+          <span className="todayTomrwText" onClick={()=>setDate("today")}>TODAY | </span>
+          <span className="todayTomrwText" onClick={()=>setDate("tomorrow")}>TOMORROW</span>
         </div>
       </div>
-      <input id="searchButton" type="button" value="SEARCH" />
+      <input id="searchButton" type="button" value="SEARCH" onClick={validation} />
     </div>
   );
 }

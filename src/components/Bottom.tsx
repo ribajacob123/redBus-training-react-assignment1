@@ -7,14 +7,17 @@ import account from "./images/account.png";
 import booking from "./images/booking.png";
 
 function Bottom() {
-  return (
-    <div className="bottom">
-      <Tab name="HOME" image={home} />
-      <Tab name="MY BOOKING" image={booking} />
-      <Tab name="HELP" image={help} />
-      <Tab name="MY ACCOUNT" image={account} />
-    </div>
-  );
+  const tabinfo = [
+    { name: "HOME", image: home },
+    { name: "MY BOOKING", image: booking },
+    { name: "HELP", image: help },
+    { name: "MY ACCOUNT", image: account },
+  ];
+  let tabs = [];
+  for (let i = 0; i < tabinfo.length; i++) {
+    tabs.push(<Tab name={tabinfo[i].name} image={tabinfo[i].image} />);
+  }
+  return <div className="bottom">{tabs}</div>;
 }
 
 export default Bottom;

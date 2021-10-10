@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/BusPass.css";
+
 import busPassImage from "./images/buspass.png";
 
 function BusPass() {
